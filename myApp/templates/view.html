@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    
+
+</head>
+<body style="background-color: bisque; font-size: 16px;">
+
+<div class="container">
+      {% include 'navbar.html' %}
+      <center><h1 style="color: brown;"><b>Student Details</b></h1></center>
+  <table class="table table-hover">
+    <thead>
+      <tr class="text-danger">
+        <th>Id</th>
+        <th>Name</th>
+        <th>FatherName</th>
+        <th>MotherName</th>
+        <th>Course</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>BloodGroup</th>
+        <th>PhoneNo</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      {% for e in emp %}
+      <tr>
+        
+        <td>{{e.id}}</td>
+        <td>{{e.name}}</td>
+        <td>{{e.fathername}}</td>
+        <td>{{e.mothername}}</td>
+        <td>{{e.course}}</td>
+        <td>{{e.gender}}</td>
+        <td>{{e.dateonbirth}}</td>
+        <td>{{e.bloodgroup}}</td>
+        <td>{{e.phoneno}}</td>
+        <td>{{e.address}}</td>
+        <td>{{e.email}}</td>
+        <td>{{e.password}}</td>
+        <td><a href="/update/{{e.id}}" class="btn btn-success" style="font-size: 18px;">Update</a></td>
+        <td><a href="/delemp/{{e.id}}" class="btn btn-danger" style="font-size: 18px;">Delete</a></td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

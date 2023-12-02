@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+    {% include 'navbar.html' %}
+    <body style="background-color: lightcyan; font-size: 14px; margin-left: 20px; margin-right: 20px;">
+        <center><h1 style="color: darkred; font-size: 22px;">REGISTER FROM</h1></center>
+        <form action="/upemp/{{std.id}}" method="POST" style="margin-left: 20px; margin-right: 20px;">
+            {% csrf_token %}
+            <label> NAME : </label>         
+<input type="text" name="name" value="{{std.name}}"> <br> <br>  
+<label> FATHERNAME : </label>     
+<input type="text" name="fathername" value="{{std.fathername}}"> <br> <br>  
+<label> MOTHERNAME : </label>         
+<input type="text" name="mothername" value="{{std.mothername}}"> <br> <br>  
+  
+<label name="course">   
+COURSE :  
+</label>   
+<select name="course" value="{{std.course}}">  
+    <option value="B.sc"  name="course">B.sc</option> 
+<option value="BCA"  name="course">BCA</option>  
+<option value="BBA"  name="course">BBA</option>  
+<option value="B.Tech"  name="course">B.Tech</option>  
+<option value="MBA"  name="course">MBA</option>  
+<option value="MCA"  name="course">MCA</option>  
+<option value="M.Tech"  name="course">M.Tech</option>
+<option value="M.sc"  name="course">M.sc</option>  
+</select>  
+  
+<br>  
+<br>  
+<label name="gender" value="{{std.gender}}">   
+GENDER :  
+</label><br>  
+<input type="radio" name="gender" value="Male"> Male <br>  
+<input type="radio" name="gender" value="Female"> Female <br>  
+<input type="radio" name="gender" value="Other"> Other  
+<br>  
+<br> 
+<label>DOB : </label>
+<input type="date" name="dateonbirth" value="{{std.dateonbirth}}"><br><br>
+<label>BLOOD GROUP : </label>
+<input type="text" name="bloodgroup" value="{{std.bloodgroup}}"><br><br>
+  
+<label>  
+PHONE NO :  
+</label>  
+<input type="tel" name="phoneno" value="{{std.phoneno}}"> <br> <br>  
+<label >ADDRESS : </label>  
+<br>  
+<textarea cols="50" rows="5" name="address" value="{{std.address}}">  
+</textarea>  
+<br> <br>  
+<label >EMAIL : </label>  
+<input type="email" name="email" value="{{std.email}}"> <br>    
+<br> <br>  
+<label>PASSWORD : </label> 
+<input type="password" name="password" value="{{std.password}}"> <br>   
+<br> <br>  
+  
+<button type="submit" value="{{std.submit}}" class="btn btn-danger" style="font-size: 18px;">SUBMIT</button> 
+<button type="button" value="{{std.reset}}" class="btn btn-info" style="font-size: 18px;">RESET</button>
+    </form>
+</body>
+</html>
